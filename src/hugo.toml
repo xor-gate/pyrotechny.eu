@@ -2,3 +2,10 @@ baseURL = 'https://pyrotechny.eu/'
 languageCode = 'en-us'
 title = 'Pyrotechnics International United'
 theme = "ananke"
+
+# Allow HTML in markdown pages for setting the a href target = _blank (ebook view urls)
+# See https://gohugo.io/getting-started/configuration-markup/
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,5 +1,5 @@
 #!/Applications/calibre.app/Contents/MacOS/calibre-debug calibre_to_hugo.py
-# https://manual.calibre-ebook.com/db_api.html
+# See: https://manual.calibre-ebook.com/db_api.html
 import os
 import json
 import copy
@@ -169,9 +169,9 @@ type: page
 
 			fd.write(f'![{cover}]({cover_url})\n')
 			fd.write(f'* Authors: {book.authors}\n')
-			fd.write(f'* [View]({book_url})\n\n')
+			fd.write(f'* <a href="{book_url}" target="_blank">View</a>\n\n')
 			fd.write(f'* [Download]({book_dl_url})\n\n')
-			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/\n)')
+			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/)\n')
 	
 	def synchronize(self):
 		# Load books from calibre
