@@ -2,5 +2,4 @@ GOOGLE_DRIVE_EBOOK_LIBRRARY_DB_JSON_URL = "https://drive.google.com/uc?export=vi
 CALIBRE_LIBRARY_PATH = "/Users/jerry/files/private/pyrotechnics/ebooks"
 HUGO_STATIC_CONTENT_LIBRARY_PATH = "/Users/jerry/Downloads/library.pyrotechny.eu/books"
 HUGO_CONTENT_LIBRARY_PATH = "/Users/jerry/src/github.com/xor-gate/pyrotechny.eu/src/content/library"
-HUGO_CONTENT_LIBRARY_INDEX_FILEPATH = "/Users/jerry/src/github.com/xor-gate/pyrotechny.eu/src/content/library.md"
 LIBRARY_EBOOKS_BASE_URL = "/library"

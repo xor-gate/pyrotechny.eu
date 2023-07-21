@@ -194,26 +194,30 @@ type: page
 				if len(book.authors) > 1:
 					author_suffix = 's'
 				fd.write(f"* Author{author_suffix}: {authors}\n")
-
-			if book.ids:
+			
+			# IDs to book libraries and publishers
+			if book.ids and len(book.ids) > 0:
 				fd.write(f'* IDs:\n')
 				for key, value in book.ids.items():
-					print(key)
 					if key == "amazon":
 						fd.write(f'  * Amazon: <a href="https://www.amazon.com/dp/{value}" target="_blank">{value}</a>\n')
 					elif key == "google":
 						fd.write(f'  * Google: <a href="https://books.google.com/books?id={value}" target="_blank">{value}</a>\n')
 					elif key == "isbn":
 						fd.write(f'  * ISBN: <a href="https://www.worldcat.org/isbn/{value}" target="_blank">{value}</a>\n')
+					elif key == "doi":
+						fd.write(f'  * DOI: <a href="https://dx.doi.org/{value}" target="_blank">{value}</a>\n')
 						
-				
+			# View & Download	
 			fd.write(f'* <a href="{book_url}" target="_blank">View</a>\n\n')
 			fd.write(f'* [Download]({book_dl_url}) ({book.filesize})\n\n')
 
+			# Comments
 			if book.comments:
 				fd.write(f'## Description')
 				fd.write(f'{book.comments}\n\n')
 
+			# Back
 			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/)\n')
 	
 	def synchronize(self):
@@ -227,22 +231,6 @@ type: page
 
 	""" Generate hugo markdown content files """
 	def generate(self):
-		# index ...
-		data = """---
-title: Library
-description: 'PyroTechny.EU'
-featured_image: '/images/site/library-header.jpg'
-type: page
-menu: main
----
-
-"""
-		print(f"GEN {config.HUGO_CONTENT_LIBRARY_INDEX_FILEPATH}")
-		with open(config.HUGO_CONTENT_LIBRARY_INDEX_FILEPATH, "w") as fd:
-			fd.write(data)
-			for book in self._state["books"]:
-				fd.write(f"- [{book.title}]({config.LIBRARY_EBOOKS_BASE_URL}/{book.filehash}/)\n")	
-
 		# per-book page generation
 		book_page_path = config.HUGO_CONTENT_LIBRARY_PATH
 		if not os.path.exists(book_page_path):
