@@ -1,0 +1,4 @@
+baseURL = 'https://pyrotechny.eu/'
+languageCode = 'en-us'
+title = 'Pyrotechnics International United'
+theme = "ananke"

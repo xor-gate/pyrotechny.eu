@@ -1,0 +1,6 @@
+CALIBRE_LIBRARY_PATH = "/Users/jerry/files/private/pyrotechnics/ebooks"
+HUGO_STATIC_CONTENT_LIBRARY_PATH = "/Users/jerry/src/github.com/xor-gate/pyrotechny.eu/src/static/library"
+HUGO_CONTENT_LIBRARY_PATH = "/Users/jerry/src/github.com/xor-gate/pyrotechny.eu/src/content/library"
+HUGO_CONTENT_LIBRARY_INDEX_FILEPATH = "/Users/jerry/src/github.com/xor-gate/pyrotechny.eu/src/content/library.md"
+# LIBRARY_BASE_URL = "https://pyrotechny.eu/library"
+LIBRARY_BASE_URL = "http://localhost:1313/library"
