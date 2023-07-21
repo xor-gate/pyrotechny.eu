@@ -81,27 +81,41 @@ class CalibreLibrary:
 		# First open the Calibre library and get a list of the book IDs
 		self._db = calibre.library.db(library_path).new_api
 
+	@staticmethod
+	def _get_filesize_str(path: str) -> str:
+		size = os.path.getsize(path)
+		if size < 1024:
+			return f"{size} bytes"
+		elif size < pow(1024,2):
+			return f"{round(size/1024, 2)} KB"
+		elif size < pow(1024,3):
+			return f"{round(size/(pow(1024,2)), 2)} MB"
+		elif size < pow(1024,4):
+			return f"{round(size/(pow(1024,3)), 2)} GB"
+
 	def books(self) -> 'list[CalibreLibraryBook]':
 		books = []
 		book_ids = self._db.all_book_ids()
 
 		for book_id in book_ids:
-			book = CalibreLibraryBook(self._db)
-
-			book.id = book_id
-
 			# TODO check loaded state with state of calibre based on book.id
 			#      hashing takes way to long...
-
+			book = CalibreLibraryBook(self._db)
+			book.id = book_id
 			book.title = self._db.field_for("title", book.id)
 			book.authors = self._db.field_for("authors", book.id)
+			book.comments = self._db.field_for("comments", book.id) 
+			book._metadata = self._db.get_metadata(book.id)
+			book.ids = book._metadata.get_identifiers()
 
 			# Select only first ebook format 
 			formats = self._db.formats(book.id, verify_formats=True)
 			if len(formats) > 0:
 				book.filepath = self._db.format_abspath(book.id, formats[0])
+				book.filesize = self._get_filesize_str(book.filepath)
 			else:
 				book.filepath = None
+				book.filesize = 0
 
 			books.append(book)
 	
@@ -167,10 +181,39 @@ type: page
 			book_url = self._get_google_drive_value_from_filename(book.filename, "view_url")
 			book_dl_url = self._get_google_drive_value_from_filename(book.filename, "download_url")
 
-			fd.write(f'![{cover}]({cover_url})\n')
-			fd.write(f'* Authors: {book.authors}\n')
+			authors = list(book.authors)
+			authors = ', '.join(authors)
+			if len(book.authors) == 1:
+				if book.authors[0] == "Unknown":
+					authors = None
+
+			fd.write(f'<a href="{book_url}" target="_blank">![{cover}]({cover_url})</a>\n')
+
+			if authors:
+				author_suffix = ''
+				if len(book.authors) > 1:
+					author_suffix = 's'
+				fd.write(f"* Author{author_suffix}: {authors}\n")
+
+			if book.ids:
+				fd.write(f'* IDs:\n')
+				for key, value in book.ids.items():
+					print(key)
+					if key == "amazon":
+						fd.write(f'  * Amazon: <a href="https://www.amazon.com/dp/{value}" target="_blank">{value}</a>\n')
+					elif key == "google":
+						fd.write(f'  * Google: <a href="https://books.google.com/books?id={value}" target="_blank">{value}</a>\n')
+					elif key == "isbn":
+						fd.write(f'  * ISBN: <a href="https://www.worldcat.org/isbn/{value}" target="_blank">{value}</a>\n')
+						
+				
 			fd.write(f'* <a href="{book_url}" target="_blank">View</a>\n\n')
-			fd.write(f'* [Download]({book_dl_url})\n\n')
+			fd.write(f'* [Download]({book_dl_url}) ({book.filesize})\n\n')
+
+			if book.comments:
+				fd.write(f'## Description')
+				fd.write(f'{book.comments}\n\n')
+
 			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/)\n')
 	
 	def synchronize(self):
