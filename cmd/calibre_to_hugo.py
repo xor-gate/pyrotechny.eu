@@ -1,3 +1,4 @@
+#!/Applications/calibre.app/Contents/MacOS/calibre-debug calibre_to_hugo.py
 # https://manual.calibre-ebook.com/db_api.html
 import os
 import json
@@ -5,6 +6,7 @@ import copy
 import shutil
 import pathlib
 import hashlib
+import urllib
 import calibre.library
 
 import config
@@ -106,13 +108,10 @@ class CalibreLibrary:
 		return books
 
 class PyroTechnyLibrary:
-	SYNC_STATE_FILE = ".calibre_to_hugo.sync_state.json"
-
 	_calibre_library : CalibreLibrary
 	_path: str
 	_tempdir: str
-	_state_file: str
-	_state: dict
+	_google_drive_file_db: list
 
 	def __init__(self, path: str, calibre_library: CalibreLibrary):
 		self._books = []
@@ -123,25 +122,26 @@ class PyroTechnyLibrary:
 
 		# Create path directories
 		if not os.path.exists(self._path):
+			print(f"CREATE {self._path}")
 			os.makedirs(self._path, 0o755)
 
-		self._state_filepath = os.path.join(self._path, self.SYNC_STATE_FILE)
-		self._state_load()
+		self._load_google_drive_file_db()
 
-	def __del__(self):
-		self._state_save()
+	def _get_google_drive_value_from_filename(self, filename: str, key: str) -> str:
+		value = ""
+		for file in self._google_drive_file_db:
+			if filename == file["filename"]:
+				value = file[key]
+				break
+		return value
 
-	def _state_load(self):
-		if not os.path.exists(self._state_filepath):
-			return
+	def _load_google_drive_file_db(self):
+		resp = urllib.request.urlopen(config.GOOGLE_DRIVE_EBOOK_LIBRRARY_DB_JSON_URL)
+		self._google_drive_file_db = json.loads(resp.read())
+		print(self._google_drive_file_db)
 
-		with open(self._state_filepath, "r") as fd:
-			self._state = json.load(fd)
-
-	def _state_save(self):
-		return # TODO
-		with open(self._state_filepath, "w") as fd:
-			json.dump(self._state, fd, indent=2)
+	def _generate_book_dl_page(self, path, book):
+		pass
 
 	def _generate_book_page(self, path, book):
 		filepath = os.path.join(path, f'{book.filehash}.md')
@@ -162,11 +162,16 @@ type: page
 			fd.write(data)
 
 			cover = os.path.basename(book.cover)
+			cover_url = self._get_google_drive_value_from_filename(cover, "view_url")
 
-			fd.write(f'![{cover}]({config.LIBRARY_BASE_URL}/{cover})\n')
+			book_url = self._get_google_drive_value_from_filename(book.filename, "view_url")
+			book_dl_url = self._get_google_drive_value_from_filename(book.filename, "download_url")
+
+			fd.write(f'![{cover}]({cover_url})\n')
 			fd.write(f'* Authors: {book.authors}\n')
-			fd.write(f'* [Download]({config.LIBRARY_BASE_URL}/{book.filename})\n\n')
-			fd.write(f'[Back]({config.LIBRARY_BASE_URL}/\n)')
+			fd.write(f'* [View]({book_url})\n\n')
+			fd.write(f'* [Download]({book_dl_url})\n\n')
+			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/\n)')
 	
 	def synchronize(self):
 		# Load books from calibre
@@ -193,7 +198,7 @@ menu: main
 		with open(config.HUGO_CONTENT_LIBRARY_INDEX_FILEPATH, "w") as fd:
 			fd.write(data)
 			for book in self._state["books"]:
-				fd.write(f"- [{book.title}]({config.LIBRARY_BASE_URL}/{book.filehash}/)\n")	
+				fd.write(f"- [{book.title}]({config.LIBRARY_EBOOKS_BASE_URL}/{book.filehash}/)\n")	
 
 		# per-book page generation
 		book_page_path = config.HUGO_CONTENT_LIBRARY_PATH
