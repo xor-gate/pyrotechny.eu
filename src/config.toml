@@ -10,7 +10,7 @@ Paginate = 3 # this is set low for demonstrating with dummy content. Set to a hi
 googleAnalytics = ""
 enableRobotsTXT = true
 
-languages]
+[languages]
   title = "Ananke"
   weight = 1
   contentDir = "content"
@@ -30,3 +30,7 @@ languages]
   # choose a background color from any on this page: https://tachyons.io/docs/themes/skins/ and preface it with "bg-"
   background_color_class = "bg-black"
   recent_posts_number = 3
+
+[[params.ananke_socials]]
+name = "rss"
+url = "/index.xml"
