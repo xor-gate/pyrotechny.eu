@@ -2,7 +2,7 @@
 title: "Library"
 featured_image: '/images/site/library-header.jpg'
 description: "PyroTechny.EU"
-type: page
+type: page 
 menu: main
 ---
 

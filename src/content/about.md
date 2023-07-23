@@ -6,7 +6,7 @@ type: page
 menu: main
 ---
 
-- Tor site URL: pyromfjuobumpkrbfumt7qyy2msraamltsfkoa4c4gxfdnnu4ngzjbyd.onion
+- Tor network site URL: pyromfjuobumpkrbfumt7qyy2msraamltsfkoa4c4gxfdnnu4ngzjbyd.onion
 - YouTube channel: [@PyroTechnyEU](https://youtube.com/@PyroTechnyEU)
 - RSS feed: <a href="/index.xml" target="_blank">pyrotechny.eu/index.xml</a>
 
