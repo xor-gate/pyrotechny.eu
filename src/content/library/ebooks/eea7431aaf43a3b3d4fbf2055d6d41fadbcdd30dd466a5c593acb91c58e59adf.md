@@ -11,4 +11,4 @@ type: page
 
 * [Download](https://drive.google.com/uc?export=download&id=1qc62MG0KlrNFYnbW5TVs3j8qyWES_-E6) (13.3 MB)
 
-[Back](/library/)
+<br />[Back to library](/library/)

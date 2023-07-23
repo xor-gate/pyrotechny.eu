@@ -67,12 +67,19 @@ class CalibreLibraryBook:
 	""" Save the ebook cover to the path """
 	def cover_save(self, path: str) -> str:
 		filehash = self.hash()
-		if not self.cover:
-			cover_tmpfile = self._db.cover(self.id, as_path=True)
-			cover_ext = pathlib.Path(cover_tmpfile).suffix
-			self.cover = os.path.join(path, f"{filehash}{cover_ext}")
-			os.rename(cover_tmpfile, self.cover)
-			print(f"SAVE COVER {self.cover}")
+
+		# NOTE: we assume by testing the cover is a .jpg so we check if it exists on disk already as "<hash>.jpg"
+		self.cover = os.path.join(path, f"{filehash}.jpg")
+		if os.path.exists(self.cover):
+			print(f"COVER {self.cover}")
+			return self.cover
+
+		cover_tmpfile = self._db.cover(self.id, as_path=True)
+		cover_ext = pathlib.Path(cover_tmpfile).suffix
+
+		self.cover = os.path.join(path, f"{filehash}{cover_ext}")
+		os.rename(cover_tmpfile, self.cover)
+		print(f"SAVE COVER {self.cover}")
 
 		return self.cover
 
@@ -150,9 +157,9 @@ class PyroTechnyLibrary:
 		return value
 
 	def _load_google_drive_file_db(self):
+		print(f"LOAD db.json from Google Drive: {config.GOOGLE_DRIVE_EBOOK_LIBRRARY_DB_JSON_URL}")
 		resp = urllib.request.urlopen(config.GOOGLE_DRIVE_EBOOK_LIBRRARY_DB_JSON_URL)
 		self._google_drive_file_db = json.loads(resp.read())
-		print(self._google_drive_file_db)
 
 	def _generate_book_dl_page(self, path, book):
 		pass
@@ -162,6 +169,8 @@ class PyroTechnyLibrary:
 		if os.path.exists(filepath):
 			os.remove(filepath)
 
+		# TODO: When we us a template file we can check if the template
+		#       or script is newer than the target book page markdown file. To speed things up a bit
 		print(f"GEN {filepath}")
 
 		with open(filepath, "w") as fd:
@@ -218,7 +227,7 @@ type: page
 				fd.write(f'{book.comments}\n\n')
 
 			# Back
-			fd.write(f'[Back]({config.LIBRARY_EBOOKS_BASE_URL}/)\n')
+			fd.write(f'<br />[Back to library]({config.LIBRARY_EBOOKS_BASE_URL}/)\n')
 	
 	def synchronize(self):
 		# Load books from calibre

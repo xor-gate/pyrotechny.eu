@@ -14,4 +14,4 @@ type: page
 ## Description<div>
 <p>Pyrotechnic Literature Series No. 6</p></div>
 
-[Back](/library/)
+<br />[Back to library](/library/)
