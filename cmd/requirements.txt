@@ -1,0 +1,9 @@
+certifi==2023.5.7
+charset-normalizer==3.2.0
+idna==3.4
+pip==22.3.1
+requests==2.31.0
+setuptools==65.5.1
+wheel==0.38.4
+PyYAML==6.0.1
+Jinja2==3.1.2

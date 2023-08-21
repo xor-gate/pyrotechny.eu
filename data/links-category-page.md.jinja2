@@ -1,0 +1,12 @@
+---
+title: {{ name }} links
+description: 'PyroTechny.EU'
+featured_image: '/images/site/about-header.jpg'
+type: page
+---
+
+{% for link in links -%}
+* <a href="{{ link.url }}" target="_blank">{{ link.url_description }}</a>
+{% endfor %}
+
+[Back to links](/links/categories/)

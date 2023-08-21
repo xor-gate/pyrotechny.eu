@@ -1,6 +1,6 @@
 /**
  * Google drive folder file public share creator
- * For use on https://script.google.com/ platform
+ * For use on https://script.google.com/ platform (Google Apps Script)
  * Shares the folderID files and writes a db.json to the folder
  */
 function share_folder_files() {
@@ -18,32 +18,34 @@ function share_folder_files() {
 
       var entry = {
         filename: file.getName(),
-        url: "https://drive.google.com/uc?export=view&id=" + file.getId(),
-        download_url: "https://drive.google.com/uc?export=view&id=" + file.getId() + "&export=download"
+        view_url: "https://drive.google.com/uc?export=view&id=" + file.getId(),
+        download_url: "https://drive.google.com/uc?export=download&id=" + file.getId()
       };
       result.push(entry);
   };
 
-  data = JSON.stringify(result);
-  Logger.log(data);
 
-  // Create db.json and share the file
-  DriveApp.getFolderById(folderId).createFile("db.json", data, MimeType.PLAIN_TEXT);
+  // Update or create db.json and share the file
+  var file = null;
   files = DriveApp.getFolderById(folderId).getFilesByName("db.json");
   while (files.hasNext()) {
-      var file = files.next();
-      if (file.getName() != "db.json") {
-        continue;
-      }
-
-      sharing = file.getSharingAccess();
-      if (sharing != DriveApp.Access.ANYONE_WITH_LINK) {
-        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-      }
-
-      download_url =  "https://drive.google.com/uc?export=view&id=" + file.getId() + "&export=download";
-      Logger.log("db.json: " + download_url)
+    file = files.next(); // NOTE: Only last file is updated, no duplicates are removed...
   }
-}
 
-share_folder_files();
+  db_json_data = JSON.stringify(result);
+
+  if (!file) {
+    file = DriveApp.getFolderById(folderId).createFile("db.json", db_json_data, MimeType.PLAIN_TEXT);
+    sharing = file.getSharingAccess();
+    if (sharing != DriveApp.Access.ANYONE_WITH_LINK) {
+        file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    }
+    Logger.log("Created db.json");
+  } else {
+    file.setContent(db_json_data);
+    Logger.log("Updated db.json");
+  }
+
+  download_url =  "https://drive.google.com/uc?export=view&id=" + file.getId();
+  Logger.log("db.json: " + download_url)
+}

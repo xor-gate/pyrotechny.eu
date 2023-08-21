@@ -1,0 +1,87 @@
+###
+# pyrotechny.eu Links YAML database
+# see: https://quickref.me/yaml.html
+###
+
+categories:
+  - forum
+
+countries:
+  - international
+  - US
+  - NL
+  - UK
+  - RU
+  - PL
+  - DE
+
+links:
+
+  ###
+  # category: forum
+  ### 
+
+  - url: https://fireworking.com/forum
+    url_description: Fireworking.com forum
+    country: international
+    categories: [forum]
+
+  - url: https://www.amateurpyro.com/forum/
+    url_description: Amateur Pyrotechnics and Chemistry Forum 
+    country: international
+    categories: [forum]
+
+  - url: http://pyro-gear.co.uk/forum/
+    url_description: Pyro-Gear Forum (United Kingdom)
+    country: UK
+    categories: [forum]
+
+  - url: https://www.sciencemadness.org/whisper/
+    url_description: Sciencemadness.org Forum (English)
+    country: international
+    categories: [forum]
+
+  - url: https://www.reddit.com/r/Pyrotechnics/
+    url_description: r/Pyrotechnics on Reddit (English)
+    country: international
+    categories: [forum]
+
+  - url: https://www.reddit.com/r/fireworks/
+    url_description: r/fireworks on Reddit (English)
+    country: international
+    categories: [forum]
+
+  - url: https://pyroforum.nl/ 
+    url_description: PyroForum.nl (Dutch)
+    country: NL
+    categories: [forum]
+
+  - url: http://www.pyrosociety.org.uk/forum/
+    url_description: UK Pyrotechnics Society - the pyrotechnics forum (United Kingdom)
+    country: UK
+    categories: [forum]
+
+  - url: https://www.thevespiary.org/talk/ 
+    url_description: The Vespiary chemistry forum (English)
+    country: international
+    categories: [forum]
+
+  - url: https://pirotehnika-ruhelp.com/ 
+    url_description: Pirotehnika-ruhelp.com (Russian)
+    country: RU
+    categories: [forum]
+
+  - url: https://freakpyromaniacs.com/index.php
+    url_description: FREAKPYROMANIACS.com (Dutch)
+    country: NL
+    categories: [forum]
+
+  - url: https://www.forumfajerwerki.pl/ 
+    url_description: Forumfajerwerki.pl (Polish)
+    country: PL
+    categories: [forum]
+
+  - url:
+    url_description: Feuerwerk-Forum.de
+    country: PL
+    categories: [forum]

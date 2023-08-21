@@ -1,0 +1,10 @@
+---
+title: Link categories
+description: 'PyroTechny.EU'
+featured_image: '/images/site/about-header.jpg'
+type: page
+---
+
+{% for category in categories -%}
+* [{{ category }}](/links/category/{{ category }})
+{%- endfor %}
