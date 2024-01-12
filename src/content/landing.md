@@ -19,4 +19,3 @@ Use the navigation above on the page or go to one of the following sections:
 - [Library](/library/)
 - [About](/about/)
   - YouTube Channel [@PyroTechnyEU](https://youtube.com/@PyroTechnyEU)
-  - Tor site URL: pyromfjuobumpkrbfumt7qyy2msraamltsfkoa4c4gxfdnnu4ngzjbyd.onion
