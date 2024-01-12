@@ -1,4 +1,4 @@
-# Library e-books sitemap
+# E-books library sitemap
 
 * [Skylighter.com Turbo Pyro 10 fireworks you can make this weekend](/library/ebooks/3490c7423c5311d221bce320f43abd3e5a8fecc2aeee3e49af1a112f7723e3f3)
 * [Pyrotechnics Cook Book](/library/ebooks/c4c1eb4381d65d7d6ea35e9fc828352e9335e2be7d41235f183bf6faaa45f4a3)
