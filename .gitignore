@@ -1,4 +1,5 @@
 .DS_Store
 *.iml
 .idea
+cmd/rclone.conf
 __pycache__

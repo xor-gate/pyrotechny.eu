@@ -249,11 +249,22 @@ type: page
 		for book in self._state["books"]:
 			self._generate_book_page(book_page_path, book)
 
+	def generate_library_sitemap(self, filepath: str):
+		if os.path.exists(filepath):
+			os.remove(filepath)
+
+		with open(filepath, "w") as fd:
+			fd.write("# E-books library sitemap\n\n")
+
+			for book in self._state["books"]:
+				fd.write(f"* [{book.title}]({config.LIBRARY_EBOOKS_BASE_URL}/ebooks/{book.hash()})\n")
+
 def main():
 	calibre_library = CalibreLibrary(config.CALIBRE_LIBRARY_PATH)
 	pyrotechny_library = PyroTechnyLibrary(config.HUGO_STATIC_CONTENT_LIBRARY_PATH, calibre_library)
 	pyrotechny_library.synchronize()
 	pyrotechny_library.generate()
+	pyrotechny_library.generate_library_sitemap(config.HUGO_CONTENT_LIBRARY_SITEMAP_PATH)
 
 if __name__ == "__main__":
     main()

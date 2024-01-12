@@ -6,4 +6,6 @@ description: "PyroTechny.EU"
 type: page 
 ---
 
-This is awesome
+This Library contains Pyrotechnic related e-books and website mirrors.
+
+View also the simple [library e-books sitemap](/library/ebooks/sitemap)
