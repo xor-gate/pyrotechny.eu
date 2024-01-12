@@ -18,12 +18,12 @@ function share_folder_files() {
 
       var entry = {
         filename: file.getName(),
-        view_url: "https://drive.google.com/uc?export=view&id=" + file.getId(),
+		    view_url: "https://drive.google.com/uc?id=" + file.getId(),
         download_url: "https://drive.google.com/uc?export=download&id=" + file.getId()
       };
+  
       result.push(entry);
   };
-
 
   // Update or create db.json and share the file
   var file = null;
@@ -47,5 +47,5 @@ function share_folder_files() {
   }
 
   download_url =  "https://drive.google.com/uc?export=view&id=" + file.getId();
-  Logger.log("db.json: " + download_url)
+  Logger.log("db.json located at " + download_url)
 }

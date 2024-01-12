@@ -5,7 +5,7 @@ featured_image: "/images/site/library-header.jpg"
 type: page
 ---
 
-<a href="https://drive.google.com/uc?export=view&id=1E-PCJGUIM9ylQS4KuNxWI6WnbKH5b_Wk" target="_blank">![0efe7ce87e33b85fe9bedc4ba7d6855cca7a0a08dcbdcb31c2ff05966bdb2ecf.jpg](https://drive.google.com/uc?export=view&id=1hap-Zfj6zZut6ZHw5KmP0fQC-OkOZIda)</a>
+<a href="https://drive.google.com/uc?export=view&id=1E-PCJGUIM9ylQS4KuNxWI6WnbKH5b_Wk" target="_blank">![0efe7ce87e33b85fe9bedc4ba7d6855cca7a0a08dcbdcb31c2ff05966bdb2ecf.jpg](/images/library/0efe7ce87e33b85fe9bedc4ba7d6855cca7a0a08dcbdcb31c2ff05966bdb2ecf.jpg)</a>
 * Authors: Kenneth L. Kosanke, B. J. Kosanke
 * IDs:
   * ISBN: <a href="https://www.worldcat.org/isbn/9781889526010" target="_blank">9781889526010</a>

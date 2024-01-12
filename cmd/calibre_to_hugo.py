@@ -185,7 +185,7 @@ type: page
 			fd.write(data)
 
 			cover = os.path.basename(book.cover)
-			cover_url = self._get_google_drive_value_from_filename(cover, "view_url")
+			cover_url = os.path.join(config.LIBRARY_EBOOKS_THUMBS_URL_PATH, cover)
 
 			book_url = self._get_google_drive_value_from_filename(book.filename, "view_url")
 			book_dl_url = self._get_google_drive_value_from_filename(book.filename, "download_url")
@@ -234,7 +234,7 @@ type: page
 		books = self._calibre_library.books()
 		for book in books:
 			book.ebook_filename()
-			book.cover_save(config.HUGO_STATIC_CONTENT_LIBRARY_PATH)  
+			book.cover_save(config.HUGO_STATIC_CONTENT_LIBRARY_IMAGES_PATH)  
 			book.ebook_save(config.HUGO_STATIC_CONTENT_LIBRARY_PATH)
 			self._state["books"].append(book)
 

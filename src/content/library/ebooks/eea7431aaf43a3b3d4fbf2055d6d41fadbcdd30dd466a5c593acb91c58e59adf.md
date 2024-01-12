@@ -5,7 +5,7 @@ featured_image: "/images/site/library-header.jpg"
 type: page
 ---
 
-<a href="https://drive.google.com/uc?export=view&id=1qc62MG0KlrNFYnbW5TVs3j8qyWES_-E6" target="_blank">![eea7431aaf43a3b3d4fbf2055d6d41fadbcdd30dd466a5c593acb91c58e59adf.jpg](https://drive.google.com/uc?export=view&id=1Pl2GNUG32rnP8D-PDVMl7xRag53mPypN)</a>
+<a href="https://drive.google.com/uc?export=view&id=1qc62MG0KlrNFYnbW5TVs3j8qyWES_-E6" target="_blank">![eea7431aaf43a3b3d4fbf2055d6d41fadbcdd30dd466a5c593acb91c58e59adf.jpg](/images/library/eea7431aaf43a3b3d4fbf2055d6d41fadbcdd30dd466a5c593acb91c58e59adf.jpg)</a>
 * Author: K.L. Kosanke, Bonnie J. Kosanke
 * <a href="https://drive.google.com/uc?export=view&id=1qc62MG0KlrNFYnbW5TVs3j8qyWES_-E6" target="_blank">View</a>
 
