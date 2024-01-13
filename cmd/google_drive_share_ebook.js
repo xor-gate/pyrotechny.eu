@@ -18,11 +18,12 @@ function share_folder_files() {
 
       var entry = {
         filename: file.getName(),
-		    view_url: "https://drive.google.com/uc?id=" + file.getId(),
+		    view_url: "https://drive.google.com/file/d/" + file.getId() + "/view",
         download_url: "https://drive.google.com/uc?export=download&id=" + file.getId()
       };
   
       result.push(entry);
+      Logger.log(entry["filename"] + " -> " + file.getId());
   };
 
   // Update or create db.json and share the file
