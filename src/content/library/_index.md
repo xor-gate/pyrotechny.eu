@@ -8,4 +8,4 @@ type: page
 
 This Library contains Pyrotechnic related e-books and website mirrors.
 
-View also the simple [library e-books sitemap](/library/ebooks/sitemap)
+View also the simple [library e-books sitemap](/library/ebooks/sitemap) or [download a snapshot of the library using Torrent](/library/ebooks/torrent).
