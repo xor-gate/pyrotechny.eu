@@ -37,11 +37,11 @@ a.tip:hover span {
 
 * <a href="https://fireworking.com/forum" class="tip" target="_blank">Fireworking.com forum<span>Needs payed subscription for access<br/>Language: English</span></a>
 * <a href="https://www.amateurpyro.com/forum/" class="tip" target="_blank">Amateur Pyrotechnics and Chemistry Forum<span>Active forum<br/>Language: English</span></a>
-* <a href="http://pyro-gear.co.uk/forum/" class="tip" target="_blank">Pyro-Gear Forum<span>Language: English</span></a>
-* <a href="https://www.sciencemadness.org/whisper/" class="tip" target="_blank">Sciencemadness.org Forum<span>Language: English</span></a>
+* <a href="http://pyro-gear.co.uk/forum/" class="tip" target="_blank">Pyro-Gear Forum<span>United Kingdom (UK) amateur pyrotechnic manufacturing and firework related discussion forum<br/>Almost inactive<br />Language: English</span></a>
+* <a href="https://www.sciencemadness.org/whisper/" class="tip" target="_blank">Sciencemadness.org Forum<span>General chemistry forum. Contains some pyrotechnic related discussions<br/>Language: English</span></a>
 * <a href="https://www.reddit.com/r/Pyrotechnics/"  class="tip"  target="_blank">r/Pyrotechnics on Reddit<span>Language: English</span></a>
 * <a href="https://www.reddit.com/r/fireworks/" class="tip" target="_blank">r/fireworks on Reddit<span>Language: English</span></a>
-* <a href="https://pyroforum.nl/" class="tip" target="_blank">PyroForum.nl<span>Not very active anymore<br/>Language: Dutch</span></a>
+* <a href="https://pyroforum.nl/" class="tip" target="_blank">PyroForum.nl<span>Dutch amateur pyrotechnics forum<br/>Almost inactive<br/>Language: Dutch</span></a>
 * <a href="http://www.pyrosociety.org.uk/forum/" class="tip" target="_blank">UK Pyrotechnics Society - <i>the</i> pyrotechnics forum<span>Language: English</span></a>
 * <a href="https://www.thevespiary.org/talk/" class="tip" target="_blank">The Vespiary chemistry forum</a>
 * <a href="https://pirotehnika.ruhelp.com/" class="tip"  target="_blank">Pirotehnika.ruhelp.com<span>Language: Russian</span></a>
@@ -70,7 +70,7 @@ a.tip:hover span {
 * <a href="https://library.sciencemadness.org/library/index.html" class="tip" target="_blank">Sciencemadness library<span>Chemistry literature which at time of writing holds 50426 pages of reading and reference material in 107 volumes.<br/>Language: English</span></a>
 * <a href="https://www.privatedata.com/byb/pyro/pfp/Index.html" class="tip"  target="_blank">Pyrotechnic Formulary Page (PFP)<span>This is a great archive of pyro formulae. Sadly, the author took it down as a result of the actions of a moron (familiar story, unfortunately). On his site he has given permission to others to put it on their sites, which is what I have done as I believe it's a great collection. The original site address is `www.come.to/pfp` If he changes his mind, this is probably where the up to date version will reside in the future. I downloaded this version a couple of years ago, I don't know if a more up to date version exists.
 The author is Andrew Krywonizka, who must be given all credit for this work.<br/>Language: English</span></a>
-* <a href="https://web.archive.org/web/20170616101434/http://www.pyrodb.org/links.php5" class="tip"  target="_blank">Pyrotechniques.org<span>Composition database and information<br/>Language: English</span></a>
+* <a href="https://web.archive.org/web/20170616101434/http://www.pyrodb.org/links.php5" class="tip"  target="_blank">Pyrotechniques.org (archive)<span>Composition database and information<br/>Website is archived by Internet Wayback Machine<br/>Language: English</span></a>
 * <a href="https://www.skylighter.com/pages/pyro-club" class="tip"  target="_blank">Skylighter Pyro Club and Resources<span>Language: English</span></a>
 # Safety, the law and training
 
