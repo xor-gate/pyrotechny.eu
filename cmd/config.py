@@ -7,3 +7,4 @@ HUGO_STATIC_CONTENT_LIBRARY_IMAGES_PATH = "/Users/jerry/src/github.com/xor-gate/
 LIBRARY_EBOOKS_BASE_URL = "/library"
 LIBRARY_EBOOKS_THUMBS_URL_PATH = "/images/library"
 EBOOK_LIBRARY_TORRENT_CACHE_DIR = "/Users/jerry/files/pyrotechnics/cache/fireworks_and_pyrotechnics_ebook_library_by_pyrotechny_eu"
+CLEARWEB_FILTERED_BOOKS = ["b74c5626774ce2cfc7efe245aabce72e7e261295931008b843848d2f54f9954b"]

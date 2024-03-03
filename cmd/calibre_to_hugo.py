@@ -124,6 +124,10 @@ class CalibreLibrary:
 				book.filepath = None
 				book.filesize = 0
 
+			if book.hash() in config.CLEARWEB_FILTERED_BOOKS:
+				print(f"SKIP Book {book.title} filtered and not published on the clearweb")
+				continue
+
 			books.append(book)
 	
 		return books
