@@ -9,27 +9,29 @@ menu: main
 <style>
 a.tip {
     border-bottom: 1px dashed;
-    text-decoration: none
+    text-decoration: none;
+    color: #0f0f0f;
 }
 a.tip:hover {
     cursor: help;
-    position: relative
+    position: relative;
 }
 a.tip span {
-    display: none
+    display: none;
 }
 a.tip:hover span {
     border: #000000 1px solid;
     padding: 5px 20px 5px 5px;
     display: block;
     z-index: 100;
-    background: url(../images/status-info.png) #f0f0f0 no-repeat 100% 5%;
+    background: #f0f0f0 no-repeat 100% 5%;
+    color: #000000;
     left: 0px;
     margin: 0px;
     width: 500px;
     position: absolute;
     top: 30px;
-    text-decoration: none
+    text-decoration: none;
 }
 </style>
 
@@ -93,6 +95,12 @@ Websites not online anymore but archived by the Archive.org Internet Wayback Mac
 * <a href="https://thefireworksblog.com/" class="tip"  target="_blank">The fireworks blog<span>The Fireworks Blog is a blog to tell about the history, culture, art and science behind Fireworks around the world.<br />The information comes from various sources like websites, books and the own knowledge and experience of the author.<br />Fireworks is direct related to explosives and I hope you NEVER use the information contained in this website to injure yourself or someone. Hope you like and expand your knowledge about Fireworks!<br/>Language: English</span></a>
 * <a href="http://www.pyropage.50megs.com/" class="tip"  target="_blank">The Spudding and Pyro Page<span>This page was made by ***** (he prefers not to be named) and it details his experience with potato guns from the beginning and his experience with beginner pyrotechnics and a few explosives.<br/>I made this page in order to help people who are new to potato guns get started and have fun with this rewarding hobby.<br/>More experienced spudders might also find something interesting to enhance their spudding experience, or maybe not. I have three spudguns: a pneumatic gun from How Not To Build An Aircannon, a large combustion gun I made without plans and a smaller gun which is rather strange but works well all the same. <br/>The other reason I made this page is to help people who are just getting started with pyrotechnics.<br/>Language: English</span></a>
 * <a href="https://woelen.homescience.net/science/chem/exps/index_fire.html" class="tip"  target="_blank">Woelen Homescien.net - Experiments with bangs, fire, or smoke<span>Many serious home chemistry persons think that fire, smoke and bangs only are good for kewls, but one cannot deny that especially this kind of experiments has a big appeal for most people. For many people it is this kind of experiments which have sparked their interest in science. For that reason, the list of this type of experiments is fairly long.<br/>Language: English</span></a>
+
+## Ebooks
+
+* https://www.abebooks.com/collections/sc/pyrotechnics/yUF6NQk2W1tdenSFIJB16
+* https://nnty.fun/downloads/books/pyrotech/
+
 ## Retail
 
 * <a href="https://www.fireworkscrazy.co.uk/" class="tip"  target="_blank">Firework Crazy<span>UK (United Kingdom) fireworks retailer with information and training<br/>Language: English</span></a>
