@@ -86,6 +86,7 @@ The author is Andrew Krywonizka, who must be given all credit for this work.<br/
 Websites not online anymore but archived by the Archive.org Internet Wayback Machine.
 
  * <a href="https://web.archive.org/web/20161014024316/http://fireworksalliance.org/index.cgi" class="tip"  target="_blank">The Fireworks Alliance<span>To protect, preserve, and promote fireworks, rocketry, chemistry, and amateur science experimentation in America.<br/>Language: English</span></a>
+ * <a href="https://web.archive.org/web/20220530192115/http://wichitabuggywhip.com/fireworks/index.html" class="tip"  target="_blank">Painting the Sky - Notes on Fireworks (whichitabuggywhip.com)<span>I am the pyro dummy, fusing, running, shooting... maneuvers calculated brilliantly<br/>Language: English</span></a>
 
 ## Blogs & personal sites
 
