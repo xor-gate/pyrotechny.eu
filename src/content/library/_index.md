@@ -3,7 +3,8 @@ title: "Library"
 cascade:
   featured_image: '/images/site/library-header.jpg'
 description: "PyroTechny.EU"
-type: page 
+type: page
+menus: main
 ---
 
 This Library contains Pyrotechnic related e-books and website mirrors.
