@@ -3,4 +3,5 @@
 .idea
 .obsidian/
 cmd/rclone.conf
+src/resources/_gen
 __pycache__

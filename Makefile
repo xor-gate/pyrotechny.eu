@@ -1,2 +1,2 @@
 watch:
-	cd src && hugo server -w -D
+	cd src && hugo server -w -D --disableFastRender

@@ -3,7 +3,7 @@ title: Links
 description: 'PyroTechny.EU'
 featured_image: '/images/site/links-header.jpg'
 type: page
-menu: main
+menus: main
 ---
 
 <style>
@@ -99,8 +99,8 @@ Websites not online anymore but archived by the Archive.org Internet Wayback Mac
 
 ## Ebooks
 
-* https://www.abebooks.com/collections/sc/pyrotechnics/yUF6NQk2W1tdenSFIJB16
-* https://nnty.fun/downloads/books/pyrotech/
+*  <a href=" https://www.abebooks.com/collections/sc/pyrotechnics/yUF6NQk2W1tdenSFIJB16" class="tip"  target="_blank">AbeBooks Pyrotechnics physical books store<span>- Curated by Prometheus Publications<br/>Language: English</span></a>
+* <a href="https://nnty.fun/downloads/books/pyrotech/" class="tip"  target="_blank">~ c o m f y b o x ~ Pyrotechnics e-books open directory<span><br/>Language: English</span></a>
 
 ## Retail
 

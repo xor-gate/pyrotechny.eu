@@ -3,7 +3,7 @@ title: About
 description: 'PyroTechny.EU'
 featured_image: '/images/site/about-header.jpg'
 type: page
-menu: main
+menus: main
 ---
 
 - YouTube channel: [@PyroTechnyEU](https://youtube.com/@PyroTechnyEU)
